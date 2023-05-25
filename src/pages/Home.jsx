@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { getTrendingMovies } from 'components/service/api';
+import Spinner from 'components/Loader/Loader';
+import { Link } from 'react-router-dom';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -22,27 +27,10 @@ const Home = () => {
 
   return (
     <div>
+      {loading && <Spinner />}
+      {error && <ToastContainer />}
       <h2>Trending today</h2>
-      <ul>
-        {loading
-          ? 'Loading...'
-          : trendingMovies.map(movie => {
-              return (
-                <li key={movie.id}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    width={`200`}
-                    alt="preview"
-                  />
-                  {movie.title && (
-                    <p>
-                      {movie.title}||{movie.name}
-                    </p>
-                  )}
-                </li>
-              );
-            })}
-      </ul>
+      <MoviesList trendingMovies={trendingMovies} />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { NavLink, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Home from 'pages/Home';
+import Movies from 'pages/Movies';
+import MovieDetails from 'pages/MovieDetails';
 
 export const App = () => {
   return (
@@ -15,8 +17,8 @@ export const App = () => {
       </ul>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<div>Movies</div>} />
-        <Route path="/movies/:/movieId" element={<div>Movie</div>} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />} />
       </Routes>
     </div>
   );

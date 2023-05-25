@@ -1,31 +1,29 @@
 import axios from 'axios';
 
-const KEY = 'b88a81f4023f887d7c5099f96529b634';
-const URL = 'https://api.themoviedb.org/3';
-const URL_TRENDING_MOVIES = 'https://api.themoviedb.org/3/trending/all/day';
-const URL_SEARCH_BY_NAME = 'https://api.themoviedb.org/3/search/movie';
-const URL_SEARCH_BY_ID = 'https://api.themoviedb.org/3/movie';
+const instance = axios.create({
+  baseURL: 'https://api.themoviedb.org/3',
+  params: {
+    api_key: 'b88a81f4023f887d7c5099f96529b634',
+    language: 'en-US',
+  },
+});
 
 export async function getTrendingMovies() {
-  axios.defaults.params = {
-    api_key: KEY,
-    language: 'en-US',
-  };
+  const query = `/trending/all/day`;
   try {
-    const { data } = await axios.get(`${URL_TRENDING_MOVIES}`);
-    // console.log(data);
+    const { data } = await instance.get(query);
     return data.results;
-  } catch (error) {}
+  } catch (error) {
+    throw error;
+  }
 }
-
-export async function searchMovieByName(name) {
-  axios.defaults.params = {
-    api_key: KEY,
-    language: 'en-US',
-    query: `${name}`,
-  };
+export async function getMovieDetails(id) {
+  const query = `/movie/${id}`;
   try {
-    const { data } = await axios.get(`${URL_SEARCH_BY_NAME}`);
-    return data.results;
-  } catch (error) {}
+    const { data } = await instance.get(query);
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
 }
