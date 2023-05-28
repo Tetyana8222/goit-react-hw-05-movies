@@ -29,7 +29,7 @@ const Home = () => {
     <div>
       {loading && <Spinner />}
       {error && <ToastContainer />}
-      <h2>Trending today</h2>
+
       <MoviesList trendingMovies={trendingMovies} />
     </div>
   );

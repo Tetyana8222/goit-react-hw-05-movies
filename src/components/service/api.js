@@ -21,6 +21,29 @@ export async function getMovieDetails(id) {
   const query = `/movie/${id}`;
   try {
     const { data } = await instance.get(query);
+    // console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getCastInfo(id) {
+  const query = `/movie/${id}/credits`;
+  try {
+    const { data } = await instance.get(query);
+    console.log(data);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getMovieReviews(id) {
+  const query = `/movie/${id}/reviews`;
+  try {
+    const { data } = await instance.get(query);
     console.log(data);
     return data;
   } catch (error) {
