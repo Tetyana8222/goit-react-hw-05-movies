@@ -30,10 +30,9 @@ export const MoviesList = ({ trendingMovies }) => {
                     ) : (
                       <Img src={noImage} alt="No Image Available" />
                     )}
-
-                    {movie.title && <Title>{movie.title}</Title>}
-                    {movie.name && <Title>{movie.name}</Title>}
                   </Thumb>
+                  {movie.title && <Title>{movie.title}</Title>}
+                  {movie.name && <Title>{movie.name}</Title>}
                 </StyledLink>
               </Li>
             );

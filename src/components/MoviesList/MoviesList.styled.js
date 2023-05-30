@@ -28,17 +28,19 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   text-align: center;
   width: 220px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  border-radius: 5px;
 `;
 
 export const Thumb = styled.div`
   position: relative;
   overflow: hidden;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   width: 220px;
   height: 330px;
 `;
