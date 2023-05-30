@@ -1,4 +1,3 @@
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
@@ -15,11 +14,20 @@ export function SearchForm({ onSubmit }) {
     event.preventDefault();
     if (query.trim() === '') {
       setQuery('');
-      toast.error('Search field is empty');
       return;
     }
-    onSubmit(query);
+    onSubmit(query.trim());
+    setQuery('');
   };
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   if (query.trim() === '') {
+  //     setQuery('');
+  //     toast.error('Search field is empty');
+  //     return;
+  //   }
+  //   onSubmit(query);
+  // };
 
   return (
     <Form onSubmit={handleSubmit}>

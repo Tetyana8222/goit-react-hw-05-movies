@@ -10,6 +10,7 @@ import {
   Button,
 } from './MovieCard.styled';
 import { Container, Section } from 'components/App.styled';
+import noImage from '../../images/noImage.png';
 
 export const MovieCard = ({ movieInfo }) => {
   const getReleaseYear = releaseDate => {
@@ -22,7 +23,6 @@ export const MovieCard = ({ movieInfo }) => {
   return (
     <Section>
       <Container>
-     
         <MovieCardInfo>
           <div>
             {' '}
@@ -33,7 +33,7 @@ export const MovieCard = ({ movieInfo }) => {
                 width={`100`}
               />
             ) : (
-              <Img alt=" poster is not available" />
+              <Img src={noImage} alt=" poster is not available" />
             )}
           </div>
 

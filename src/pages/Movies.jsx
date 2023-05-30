@@ -9,15 +9,15 @@ import { MoviesListTitle } from 'components/MoviesList/MoviesList.styled';
 import popcorn from '../images/popcorn.webp';
 
 const Movies = () => {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [moviesArray, setMoviesArray] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get(`query`);
+  const query = searchParams.get(`query`);
 
   //якщо searchQuery має значення, то query буде початковою величиною, в іншому випадку, query буде мати значення ''.
-  const [query, setQuery] = useState(() => searchQuery || '');
+  // const [query, setQuery] = useState(() => searchQuery || '');
 
   useEffect(() => {
     const getData = async () => {
@@ -38,8 +38,8 @@ const Movies = () => {
     }
   }, [query]);
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const handleSubmit = query => {
+    // event.preventDefault();
     setSearchParams({ query: query });
   };
   return (

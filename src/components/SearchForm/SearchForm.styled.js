@@ -11,7 +11,7 @@ export const Form = styled.form`
   margin: 16px auto;
   display: flex;
   justify-content: center;
-  background-color: #cf2e2e;
+  background: #546e7c;
   opacity: 0.7;
   border: none;
 `;

@@ -39,11 +39,13 @@ export const Thumb = styled.div`
   overflow: hidden;
   margin-bottom: 10px;
   border-radius: 5px;
+  width: 220px;
+  height: 330px;
 `;
 export const Img = styled.img`
   display: block;
+  height: 100%;
   width: 100%;
-  height: auto;
 `;
 export const Title = styled.p`
   font-size: 12px;

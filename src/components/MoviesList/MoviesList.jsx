@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  MoviesListTitle,
   Movies,
   Ul,
   Li,
@@ -10,6 +9,7 @@ import {
   Img,
   Title,
 } from './MoviesList.styled';
+import noImage from '../../images/noImage.png';
 
 export const MoviesList = ({ trendingMovies }) => {
   return (
@@ -21,11 +21,16 @@ export const MoviesList = ({ trendingMovies }) => {
               <Li key={movie.id}>
                 <StyledLink to={`/movies/${movie.id}`}>
                   <Thumb>
-                    <Img
-                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                      width={`200`}
-                      alt="preview"
-                    />
+                    {movie.poster_path ? (
+                      <Img
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                        width={`200`}
+                        alt="preview"
+                      />
+                    ) : (
+                      <Img src={noImage} alt="No Image Available" />
+                    )}
+
                     {movie.title && <Title>{movie.title}</Title>}
                     {movie.name && <Title>{movie.name}</Title>}
                   </Thumb>
