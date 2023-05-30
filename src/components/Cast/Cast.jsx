@@ -47,6 +47,7 @@ const Cast = () => {
       ) : (
         <Section>
           <Container>
+            {error && <p>{error}</p>}
             <CastTitle>Cast and Crew</CastTitle>
             <CastList>
               {cast.map(({ credit_id, profile_path, name, character }) => (

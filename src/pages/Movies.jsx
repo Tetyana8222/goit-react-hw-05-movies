@@ -16,9 +16,6 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get(`query`);
 
-  //якщо searchQuery має значення, то query буде початковою величиною, в іншому випадку, query буде мати значення ''.
-  // const [query, setQuery] = useState(() => searchQuery || '');
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -47,8 +44,9 @@ const Movies = () => {
       <Section>
         <MoviesListTitle>Search movies:</MoviesListTitle>
         <SearchForm onSubmit={handleSubmit} />
-        {loading && <Spinner />}
+
         {moviesArray.length === 0 && <img src={popcorn} alt="searching" />}
+        {loading && <Spinner />}
         {moviesArray.length !== 0 && (
           <MoviesList trendingMovies={moviesArray} />
         )}
