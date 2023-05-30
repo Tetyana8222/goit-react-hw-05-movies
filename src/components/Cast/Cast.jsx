@@ -32,6 +32,7 @@ const Cast = () => {
       })
       .catch(error => {
         setError(error);
+        console.log(error);
         toast(error.message);
       })
       .finally(() => {
