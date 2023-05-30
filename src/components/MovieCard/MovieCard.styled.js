@@ -6,6 +6,7 @@ export const MovieCardInfo = styled.div`
   flex-direction: row;
   padding-right: 30px;
   padding-left: 30px;
+  padding-top: 30px;
 `;
 export const Img = styled.img`
   width: 200px;

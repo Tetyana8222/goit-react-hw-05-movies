@@ -5,10 +5,14 @@ export const Section = styled.section`
   border-radius: 5px;
 `;
 
+export const Movies = styled.div`
+  padding-top: 30px;
+`;
 export const MoviesListTitle = styled.h1`
   text-align: center;
   text-transform: uppercase;
   color: #000;
+  padding-top: 30px;
 `;
 
 export const Ul = styled.ul`

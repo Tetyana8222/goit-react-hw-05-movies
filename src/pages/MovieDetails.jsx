@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { NavLink, useParams } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import Spinner from 'components/Loader/Loader';
 import { getMovieDetails } from 'components/service/api';
@@ -11,7 +12,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const getMovieInfo = async () => {
@@ -33,6 +34,7 @@ const MovieDetails = () => {
       <section>
         <Container>
           {movieInfo && <MovieCard movieInfo={movieInfo} />}
+          <Outlet />
         </Container>
       </section>
       <NavLink>Go Back</NavLink>

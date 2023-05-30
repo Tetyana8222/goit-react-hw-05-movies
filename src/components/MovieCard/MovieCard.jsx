@@ -9,7 +9,7 @@ import {
   StyledNavLink,
   Button,
 } from './MovieCard.styled';
-import { Container } from 'components/App.styled';
+import { Container, Section } from 'components/App.styled';
 
 export const MovieCard = ({ movieInfo }) => {
   const getReleaseYear = releaseDate => {
@@ -20,9 +20,9 @@ export const MovieCard = ({ movieInfo }) => {
     return arrGenres.map(genre => genre.name).join(', ');
   };
   return (
-    <section>
+    <Section>
       <Container>
-        {' '}
+     
         <MovieCardInfo>
           <div>
             {' '}
@@ -66,7 +66,7 @@ export const MovieCard = ({ movieInfo }) => {
           </div>
         </MovieCardInfo>
       </Container>
-    </section>
+    </Section>
   );
 };
 

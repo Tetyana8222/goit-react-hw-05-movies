@@ -6,7 +6,7 @@ const Header = () => {
     <StyledHeader>
       <HeaderNav>
         <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink to="/">Movies</StyledNavLink>
+        <StyledNavLink to="/movies">Movies</StyledNavLink>
       </HeaderNav>
     </StyledHeader>
   );

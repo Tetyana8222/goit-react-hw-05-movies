@@ -14,6 +14,7 @@ import {
 } from './Cast.styled';
 import noImage from '../../images/noImage.png';
 import { Container } from 'components/App.styled';
+import { Thumb } from 'components/Cast/Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -30,7 +31,7 @@ const Cast = () => {
         // console.log(data.cast);
       })
       .catch(error => {
-        setError(error.message);
+        setError(error);
         toast(error.message);
       })
       .finally(() => {
@@ -45,19 +46,21 @@ const Cast = () => {
       ) : (
         <Section>
           <Container>
-            {' '}
             <CastTitle>Cast and Crew</CastTitle>
             <CastList>
               {cast.map(({ credit_id, profile_path, name, character }) => (
                 <CastItem key={credit_id}>
-                  <ActorImg
-                    src={
-                      profile_path
-                        ? `https://image.tmdb.org/t/p/w500/${profile_path}`
-                        : noImage
-                    }
-                    alt="preview"
-                  />
+                  <Thumb>
+                    <ActorImg
+                      src={
+                        profile_path
+                          ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                          : noImage
+                      }
+                      alt="preview"
+                    />
+                  </Thumb>
+
                   <ActorName>{name}</ActorName>
                   <Character>Character:{character}</Character>
                 </CastItem>

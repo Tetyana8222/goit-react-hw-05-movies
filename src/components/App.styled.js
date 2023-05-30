@@ -9,5 +9,9 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
+  position: relative;
   background-color: #fff;
+  margin-top: 4.6875rem;
+  /* padding-top: 30px; */
 `;
+
