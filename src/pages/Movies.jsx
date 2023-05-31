@@ -40,20 +40,23 @@ const Movies = () => {
   };
 
   return (
-    <Container>
-      <Section>
-        <MoviesListTitle>Search movies:</MoviesListTitle>
-        <SearchForm onSubmit={handleSubmit} />
+    <>
+      <Container>
+        <Section>
+          <MoviesListTitle>Пошук фільмів:</MoviesListTitle>
+          <SearchForm onSubmit={handleSubmit} />
 
-        {moviesArray.length === 0 && (
-          <img src={movies_popcorn} alt="searching" />
-        )}
-        {loading && <Spinner />}
-        {moviesArray.length !== 0 && (
-          <MoviesList trendingMovies={moviesArray} />
-        )}
-      </Section>
-    </Container>
+          {moviesArray.length === 0 && <img src={movies_popcorn} alt="пошук" />}
+          {loading ? (
+            <Spinner />
+          ) : (
+            moviesArray.length !== 0 && (
+              <MoviesList trendingMovies={moviesArray} />
+            )
+          )}
+        </Section>
+      </Container>
+    </>
   );
 };
 
