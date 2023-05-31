@@ -41,18 +41,18 @@ const Movies = () => {
 
   return (
     <>
+      {loading && <Spinner />}
       <Container>
         <Section>
-          <MoviesListTitle>Пошук фільмів:</MoviesListTitle>
+          <MoviesListTitle>Search movies:</MoviesListTitle>
           <SearchForm onSubmit={handleSubmit} />
 
-          {moviesArray.length === 0 && <img src={movies_popcorn} alt="пошук" />}
-          {loading ? (
-            <Spinner />
-          ) : (
-            moviesArray.length !== 0 && (
-              <MoviesList trendingMovies={moviesArray} />
-            )
+          {moviesArray.length === 0 && (
+            <img src={movies_popcorn} alt="searching" />
+          )}
+
+          {moviesArray.length !== 0 && (
+            <MoviesList trendingMovies={moviesArray} />
           )}
         </Section>
       </Container>
