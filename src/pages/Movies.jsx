@@ -10,7 +10,7 @@ import movies_popcorn from '../images/movies_popcorn.gif';
 
 const Movies = () => {
   const [moviesArray, setMoviesArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get(`query`);
