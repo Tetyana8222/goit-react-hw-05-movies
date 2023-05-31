@@ -6,7 +6,7 @@ import { SearchForm } from 'components/SearchForm/SearchForm';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import Spinner from 'components/Loader/Loader';
 import { MoviesListTitle } from 'components/MoviesList/MoviesList.styled';
-import popcorn from '../images/popcorn.webp';
+import movies_popcorn from '../images/movies_popcorn.gif';
 
 const Movies = () => {
   // const [data, setData] = useState(null);
@@ -45,7 +45,9 @@ const Movies = () => {
         <MoviesListTitle>Search movies:</MoviesListTitle>
         <SearchForm onSubmit={handleSubmit} />
 
-        {moviesArray.length === 0 && <img src={popcorn} alt="searching" />}
+        {moviesArray.length === 0 && (
+          <img src={movies_popcorn} alt="searching" />
+        )}
         {loading && <Spinner />}
         {moviesArray.length !== 0 && (
           <MoviesList trendingMovies={moviesArray} />

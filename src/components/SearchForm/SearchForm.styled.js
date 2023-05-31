@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const Form = styled.form`
   font: inherit;
+
   padding-top: 30px;
   width: 100%;
   padding: 10px;
