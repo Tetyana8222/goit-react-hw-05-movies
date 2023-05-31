@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 1200px;
+  padding-top: 40px;
   padding-right: 15px;
   padding-left: 15px;
   margin-left: auto;
@@ -14,4 +15,3 @@ export const Section = styled.section`
   margin-top: 4.6875rem;
   /* padding-top: 30px; */
 `;
-

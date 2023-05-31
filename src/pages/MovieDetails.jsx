@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
 import Spinner from 'components/Loader/Loader';
@@ -37,7 +37,6 @@ const MovieDetails = () => {
           <Outlet />
         </Container>
       </section>
-      <NavLink>Go Back</NavLink>
     </>
   );
 };

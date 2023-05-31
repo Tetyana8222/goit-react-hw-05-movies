@@ -1,4 +1,7 @@
+import { useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
+  StyledBackNavLink,
   MovieCardInfo,
   Img,
   MovieTitle,
@@ -13,6 +16,9 @@ import { Container, Section } from 'components/App.styled';
 import noImage from '../../images/noImage.png';
 
 export const MovieCard = ({ movieInfo }) => {
+  const location = useLocation();
+  const locationComeFrom = useRef(location.state?.from ?? '/');
+  console.log(locationComeFrom);
   const getReleaseYear = releaseDate => {
     const date = new Date(releaseDate);
     return date.getFullYear();
@@ -23,19 +29,19 @@ export const MovieCard = ({ movieInfo }) => {
   return (
     <Section>
       <Container>
+        <StyledBackNavLink to={locationComeFrom.current}>
+          Go Back
+        </StyledBackNavLink>
         <MovieCardInfo>
-          <div>
-            {' '}
-            {movieInfo.poster_path ? (
-              <Img
-                alt={movieInfo.title}
-                src={`https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`}
-                width={`100`}
-              />
-            ) : (
-              <Img src={noImage} alt=" poster is not available" />
-            )}
-          </div>
+          {movieInfo.poster_path ? (
+            <Img
+              alt={movieInfo.title}
+              src={`https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`}
+              width={`100`}
+            />
+          ) : (
+            <Img src={noImage} alt=" poster is not available" />
+          )}
 
           <div>
             <MovieTitle>

@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const StyledBackNavLink = styled(NavLink)`
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 28px;
+  color: #fff;
+  background-color: #546e7c;
+  opacity: 0.7;
+`;
 export const MovieCardInfo = styled.div`
   display: flex;
   flex-direction: row;

@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   background: #546e7c;
   background: linear-gradient(125deg, #546e7c, #000000);
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
 `;
 
 export const HeaderNav = styled.nav`

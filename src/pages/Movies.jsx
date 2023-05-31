@@ -9,7 +9,6 @@ import { MoviesListTitle } from 'components/MoviesList/MoviesList.styled';
 import movies_popcorn from '../images/movies_popcorn.gif';
 
 const Movies = () => {
-  // const [data, setData] = useState(null);
   const [moviesArray, setMoviesArray] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -39,6 +38,7 @@ const Movies = () => {
     // event.preventDefault();
     setSearchParams({ query: query });
   };
+
   return (
     <Container>
       <Section>

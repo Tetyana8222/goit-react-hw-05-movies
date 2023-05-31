@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useLocation } from 'react-router-dom';
 import {
   Movies,
   Ul,
@@ -12,6 +12,9 @@ import {
 import noImage from '../../images/noImage.png';
 
 export const MoviesList = ({ trendingMovies }) => {
+  const location = useLocation();
+  // console.log(location);
+
   return (
     <>
       <Movies>
@@ -19,7 +22,10 @@ export const MoviesList = ({ trendingMovies }) => {
           {trendingMovies.map(movie => {
             return (
               <Li key={movie.id}>
-                <StyledLink to={`/movies/${movie.id}`}>
+                <StyledLink
+                  to={`/movies/${movie.id}`}
+                  state={{ from: location }}
+                >
                   <Thumb>
                     {movie.poster_path ? (
                       <Img
